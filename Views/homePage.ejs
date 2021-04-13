@@ -13,11 +13,11 @@
             <div class="historique">
                 <% for (let i = 0 ; i < compos.length ; i++) { %>
                 <div class="match">
-                    <a href="www.facebook.be">
-                        <li> La Hulpe 3 <br> JJ/MM/AA <br> 23-46    
+                    <a href="/compo/<%= i %>">
+                        <li> La Hulpe 3 <br> JJ/MM/AA
                         <!-- <%= compos[i].player %> -->
                     </li> </a>
-                    <a href="/compo/delete/<%= i %>"> SUPPRIMER </a>
+                    <a href="/compo/delete/<%= i %>"> Supprimer </a>
                 </div>
                 <% } %>
             </div>    

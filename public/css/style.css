@@ -1,5 +1,5 @@
 body{
-    background-color:gray;
+    background-color: grey;
     color:orange;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -11,12 +11,6 @@ h1
     font-size: 3em;
 }
 
-h2,a
-{
-    color:blueviolet;
-    font-size: 0,5em;
-
-}
 
 a {
     color: orange;
@@ -33,27 +27,28 @@ a {
 	}
 
     .menu :hover{
-        color: white;
+        color: sienna;
         }
     
 
 .historique 	{
 	display: flex;
 	justify-content: space-around;
+    align-items: center;
 	}
 
 li   
 	{
+    color: black;
 	list-style-type: none;
-	background-color: black;
-	opacity: 0.5;
-	border: 0.5vh orange solid;;
+	background-color: orange;
+	border: 0.5vh black solid;;
 	font-size: 4vh;	
 	text-align: center;
 	}
 
     li:hover {
-	box-shadow: 5px 5px 10px blueviolet
+	box-shadow: 5px 5px 10px orange
     }
 
 	h2	
@@ -63,10 +58,9 @@ li
 
 form {
     text-align: center;
-    margin-right: 5vw;
     position: absolute;
     top: 200px;
-    right: 50px;
+    right: 250px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
@@ -75,41 +69,39 @@ form {
     position: absolute;
     bottom: 100px;
     right: 50px;
+    font-size: 2em;
     background-color: ivory;
-    border-radius: 35px;
-    box-shadow: black;
-    width: 20vw;
-    text-align: center;
-    box-shadow: 0px 0px 10px orange;
-}
-
-.new :hover {
-    color: sienna;
-}
-
-form input[type=submit] {
-    background-color: ivory;
-    border-radius: 35px;
+    border-radius: 5px;
     box-shadow: black;
     text-align: center;
     box-shadow: 0px 0px 10px orange;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-form input[type=submit]:hover {
+.new :hover {
     color: sienna;
 }
 
-li {
+form input[type=date],[type=text],[type=submit], [type=button]{
     font-size: 2em;
-    font-style:italic;
+    background-color: ivory;
+    border-radius: 5px;
+    box-shadow: black;
+    text-align: center;
+    box-shadow: 0px 0px 10px orange;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-img {
-    position: absolute;
-    top: 175px;
-    left: 250px;
-    height: 80vh;
-    border-radius: 65px;
+select {
+    font-size: 1em;
+    background-color: orange;
+    border-radius: 35px;
+    box-shadow: black;
+    text-align: center;
+    box-shadow: 0px 0px 10px black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
+form input[type=submit]:hover, [type=button]:hover {
+    color: sienna;
 }

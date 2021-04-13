@@ -1,24 +1,23 @@
 <link rel = "stylesheet" href="/css/style.css">
 
-<h1>Team Management</h1>
- <div class="menu">
-      <div> <a href="/compo">Home</a> </div>
-      <div> <a href="/players">Gestion d'Equipe</a> </div>
-  </div>
+<a href="/compo"> <h1>Feuille de Match</h1> </a>
 
     <form action="/compo/new" method= "POST">
-      
-      <form method="POST">
-         Adversaire <select name="Adversaire" id="">
-            <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
-               <option value="<%=joueurs[i].id %>" >
-                  <%= joueurs[i].Nom %> <%= joueurs[i].Prénom %>
-               </option>
-            <% } %>
-         </select>
-         Date <select></select>
-      </form>
 
+      <!-- Date -->
+
+      <input type="date" id="date"
+         value=""
+         min="2021-01-01" max="2022-01-01" required>
+
+      <!-- Adversaire -->   
+     
+      <input type="text" id="adversaire" required>
+    </br>
+   </br>
+</br>
+</br>
+<!-- Joueurs -->
         1/ <select name="joueurs" id="">
         <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
            <option value="<%=joueurs[i].id %>" >
@@ -194,7 +193,11 @@
 
      <br>
      <br>
-     <input type="submit" name="save" value="Ajouter la composition" />
-
+     <br>
+     <br>
+    
+     <a href="/compo" > <input type="button" name="cancel" value="Annuler" /> </a>
+     <input type="submit" name="save" value="Sauvegarder" />
     </form>   
+
   

@@ -29,6 +29,13 @@ app.get('/players',(req,res)=> {
     });
 });
 
+app.get('/players',(req,res)=> {
+    connection.query("select * from Adversaire;", function(error, result) {
+        if (error) console.error;
+        res.render("playerList.ejs",{Adversaire:result});
+    });
+});
+
 //list des players
 app.get('/list',(req,res)=> {
     connection.query("select * from joueurs;", function(error, result) {
