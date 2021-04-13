@@ -1,0 +1,115 @@
+body{
+    background-color:gray;
+    color:orange;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1
+{
+    color:orange;
+    text-align: center;
+    font-size: 3em;
+}
+
+h2,a
+{
+    color:blueviolet;
+    font-size: 0,5em;
+
+}
+
+a {
+    color: orange;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    align-content: space-around;
+    justify-content: space-around;
+	box-shadow: 0px 0px 10px orange;
+	font-size: 4vh;	
+	text-align: center;
+	}
+
+    .menu :hover{
+        color: white;
+        }
+    
+
+.historique 	{
+	display: flex;
+	justify-content: space-around;
+	}
+
+li   
+	{
+	list-style-type: none;
+	background-color: black;
+	opacity: 0.5;
+	border: 0.5vh orange solid;;
+	font-size: 4vh;	
+	text-align: center;
+	}
+
+    li:hover {
+	box-shadow: 5px 5px 10px blueviolet
+    }
+
+	h2	
+	{
+	color: white
+	}
+
+form {
+    text-align: center;
+    margin-right: 5vw;
+    position: absolute;
+    top: 200px;
+    right: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.new {
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
+    background-color: ivory;
+    border-radius: 35px;
+    box-shadow: black;
+    width: 20vw;
+    text-align: center;
+    box-shadow: 0px 0px 10px orange;
+}
+
+.new :hover {
+    color: sienna;
+}
+
+form input[type=submit] {
+    background-color: ivory;
+    border-radius: 35px;
+    box-shadow: black;
+    text-align: center;
+    box-shadow: 0px 0px 10px orange;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+form input[type=submit]:hover {
+    color: sienna;
+}
+
+li {
+    font-size: 2em;
+    font-style:italic;
+}
+
+img {
+    position: absolute;
+    top: 175px;
+    left: 250px;
+    height: 80vh;
+    border-radius: 65px;
+
+}

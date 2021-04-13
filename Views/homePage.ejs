@@ -1,0 +1,30 @@
+
+<body>
+    <link rel = "stylesheet" href="/css/style.css"> 
+
+    <h1>Kibubu Rugby Club</h1>
+  <div class="menu">
+      <div> <a href="/compo">Home</a> </div>
+      <div> <a href="/list">Gestion d'Equipe</a> </div>
+  </div>
+        
+    
+        <ul>
+            <div class="historique">
+                <% for (let i = 0 ; i < compos.length ; i++) { %>
+                <div class="match">
+                    <a href="www.facebook.be">
+                        <li> La Hulpe 3 <br> JJ/MM/AA <br> 23-46    
+                        <!-- <%= compos[i].player %> -->
+                    </li> </a>
+                    <a href="/compo/delete/<%= i %>"> SUPPRIMER </a>
+                </div>
+                <% } %>
+            </div>    
+        </ul>
+   
+        <div class="new">
+            <a href='/players'> Nouvelle Composition </a>    
+        </div>
+        
+</body>    
