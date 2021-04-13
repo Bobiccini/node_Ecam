@@ -1,6 +1,6 @@
 <link rel = "stylesheet" href="/css/style.css">
 
-<h1>Gestion d'Equipe</h1>
+<h1>Team Management</h1>
  <div class="menu">
       <div> <a href="/compo">Home</a> </div>
       <div> <a href="/players">Gestion d'Equipe</a> </div>
@@ -9,7 +9,7 @@
     <form action="/compo/new" method= "POST">
       
       <form method="POST">
-         Adversaire <select name="dversaire" id="">
+         Adversaire <select name="Adversaire" id="">
             <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
                <option value="<%=joueurs[i].id %>" >
                   <%= joueurs[i].Nom %> <%= joueurs[i].Prénom %>
