@@ -6,4 +6,12 @@
       <div> <a href="/list">Gestion d'Equipe</a></div>
   </div>
 
-
+<ul> 
+<% for (let i = 0 ; i < joueurs.length ; i++) { %> 
+    <li><%= joueurs[i].nom %> <%= joueurs[i].prenom %>
+        <a href="/player/delete/<%= joueurs[i].id_joueur %>"> Supprimer </a>
+        <a href="/player/update/<%= joueurs[i].id_joueur %>"> Modifier </a>
+    </li>  
+      
+ <% } %>
+</ul>

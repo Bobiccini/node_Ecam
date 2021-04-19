@@ -20,32 +20,26 @@ app.use(express.urlencoded({extended:true}));
 let router = require('./routes');
 app.use ('/',router);
 
-
-//list des players
-app.get('/players',(req,res)=> {
-    connection.query("select * from joueurs;", function(error, result) {
-        if (error) console.error;
-        res.render("playerList.ejs",{joueurs:result});
-    });
-});
-
-app.get('/players',(req,res)=> {
-    connection.query("select * from Adversaire;", function(error, result) {
-        if (error) console.error;
-        res.render("playerList.ejs",{Adversaire:result});
-    });
-});
-
 //list des players
 app.get('/list',(req,res)=> {
-    connection.query("select * from joueurs;", function(error, result) {
+    connection.query("select * from joueur;", function(error, result) {
         if (error) console.error;
+        console.log (result);
         res.render("newCompo.ejs",{joueurs:result});
     });
 });   
 
+app.get('/players',(req,res)=> {
+    connection.query("select * from joueur;", function(error, result) {
+        if (error) console.error; 
+        res.render("playerList.ejs",{joueurs:result})
+    });
+});
 
 
+app.post('/createNewTeam',(req,res)=> {
+    console.log(req.body)
+});
     
 connection.connect(function(error) {if (error) console.log(error);});
 
