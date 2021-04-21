@@ -1,0 +1,15 @@
+<link rel = "stylesheet" href="/css/style.css">
+
+<h1>Kibubu Rugby Club</h1>
+  <div class="menu">
+    <div><a href="/">Home</a></div>
+  </div>
+
+<!-- Formulaire de modification d'un joueur --> 
+  <form action="/sauvegarder_les_modifications/:id" method="post">
+      Prénom <input type="text" name="prenom"> </input>
+      Nom <input type="text" name="nom"> </input>
+    
+      <a href="/liste_des_joueurs"> <input type="button" name="cancel" value="Retour"/> </a>
+      <input type="submit" name="save" value="Sauvegarder la Modification" />
+  </form>

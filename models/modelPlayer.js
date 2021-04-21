@@ -1,4 +1,4 @@
-var Mysql = require('../DB.js')
+var Mysql = require('../db.js')
 
 module.exports = {
     delete:function(deleteId) {

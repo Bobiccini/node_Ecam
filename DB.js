@@ -7,4 +7,6 @@ var connection = mysql.createConnection({
     database : 'Rugby_app',
 });
 
+connection.connect(function(error) {if (error) console.log(error);});
+
 module.exports = connection;

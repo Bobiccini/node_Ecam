@@ -7,7 +7,9 @@
 </div>
 
 <form method="POST" action= "/player/update/<%= id %>">
-    <input type="text" name = "nom" required >
-    <input type="text" name = "prenom" required >
+  
+    Prénom <input type="text" name = "nom" required >
+    Nom <input type="text" name = "prenom" required >
     <input type="submit" value = "Sauvegarder">
+    <a href="/list"> <input type="button" name="cancel" value="Annuler" /> </a>
 </form>
