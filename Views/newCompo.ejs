@@ -2,25 +2,56 @@
 
  <h1>Feuille de Match</h1>
 
-  <form action="/" method= "POST">
+  <form action="/newCompo" method= "POST">
+
+<!-- Choix Date -->
+      Date : 
+      <input type="date" id="date" value="" min="2021-01-01" max="2022-01-01" required>
+
+<!-- Choix Adversaire -->   
+      Adversaire :
+      <select name="adversaire" id="">
+         <% for (let i = 0 ; i < adversaires.length ; i++) { %> 
+            <option value="<%=adversaires[i].id_adversaire %>"> <%= adversaires[i].nom %> </option>
+         <% } %>
+      </select>   
 
 <!-- Joueurs -->
 
-   1/ <select name="joueurs" id="">
+   1/ <select name="joueur1" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
             <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
          </option>
       <% } %>
    </select>
-   2/ <select name="joueurs" id="">
+
+   2/ <select name="joueur2" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
             <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
          </option>
       <% } %>
    </select> 
-   3/ <select name="joueurs" id="">
+
+   3/ <select name="joueur3" id="">
+      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
+         <option value="<%=joueurs[i].id %>" >
+            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
+         </option>
+      <% } %>
+   </select>
+   
+   <br>
+   <br>
+   4/ <select name="joueur4" id="">
+      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
+         <option value="<%=joueurs[i].id %>" >
+            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
+         </option>
+      <% } %>
+   </select>
+   5/ <select name="joueur5" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
             <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
@@ -29,30 +60,14 @@
    </select>
    <br>
    <br>
-   4/ <select name="joueurs" id="">
+   6/ <select name="joueur6" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
             <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
          </option>
       <% } %>
    </select>
-   5/ <select name="joueurs" id="">
-      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
-         <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
-         </option>
-      <% } %>
-   </select>
-   <br>
-   <br>
-   6/ <select name="joueurs" id="">
-      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
-         <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
-         </option>
-      <% } %>
-   </select>
-   8/ <select name="joueurs" id="">
+   8/ <select name="joueur7" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
             <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
@@ -60,7 +75,7 @@
       <% } %>
    </select> 
    
-   7/ <select name="joueurs" id="">
+   7/ <select name="joueur8" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
             <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
@@ -69,7 +84,7 @@
    </select>     
    <br>
    <br>
-   9/ <select name="joueurs" id="">
+   9/ <select name="joueur9" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
             <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
@@ -79,7 +94,7 @@
    <br> 
    <br>
 
-   10/ <select name="joueurs" id="">
+   10/ <select name="joueur10" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
             <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
@@ -89,14 +104,14 @@
    
    <br>
    <br>
-   12/ <select name="joueurs" id="">
+   12/ <select name="joueur12" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
             <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
          </option>
       <% } %>
    </select>  
-   13/ <select name="joueurs" id="">
+   13/ <select name="joueur13" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
             <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
@@ -106,72 +121,14 @@
 
    <br>
    <br>
-   11/ <select name="joueurs" id="">
+   11/ <select name="joueur11" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
             <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
          </option>
       <% } %>
    </select> 
-   15/ <select name="joueurs" id="">
-      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
-         <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
-         </option>
-      <% } %>
-   </select> 
-
-   14/ <select name="joueurs" id="">
-      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
-         <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
-         </option>
-      <% } %>
-   </select> 
-   <br>
-   <br><br>
-   <br>
-   Réserve:
-   <br>
-   <br>
-   16/ <select name="joueurs" id="">
-      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
-         <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
-         </option>
-      <% } %>
-   </select> 
-   16/ <select name="joueurs" id="">
-      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
-         <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
-         </option>
-      <% } %>
-   </select>      17/ <select name="joueurs" id="">
-      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
-         <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
-         </option>
-      <% } %>
-   </select>      18/ <select name="joueurs" id="">
-      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
-         <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
-         </option>
-      <% } %>
-   </select>      19/ <select name="joueurs" id="">
-      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
-         <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
-         </option>
-      <% } %>
-   </select>      20/ <select name="joueurs" id="">
-      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
-         <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
-         </option>
-      <% } %>
-   </select>      21/ <select name="joueurs" id="">
+   15/ <select name="joueur15" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
             <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
@@ -179,14 +136,18 @@
       <% } %>
    </select> 
 
+   14/ <select name="joueur14" id="">
+      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
+         <option value="<%=joueurs[i].id %>" >
+            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
+         </option>
+      <% } %>
+   </select> 
    <br>
    <br>
    <br>
    <br>
-  
-</br>
-</br>
-
+   <br>
      <a href="/nouvelle_composition"> <input type="button" name="cancel" value="Retour"/> </a>
      <input type="submit" name="save" value="Sauvegarder la Composition" />
 

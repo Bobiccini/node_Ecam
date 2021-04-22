@@ -9,12 +9,9 @@ let adversaireController = require ('./controllers/adversaireController');
 router.get('/', (req,res) => res.render('homePage.ejs'));
 router.post('/', (req,res) => res.render('homePage.ejs'));
 router.get('/liste_des_joueurs', joueurController.liste_joueurs);
-router.get('/nouvelle_composition', compositionController.liste_des_compositions);
 
-router.post('/feuille_de_match', (req,res) => res.render('newCompo.ejs'));
-router.get ('/feuille_de_match', compositionController.liste_joueurs);
-
-router.get('/nouvelle_composition', adversaireController.composition);
+router.get('/nouvelle_composition', compositionController.nouvelles_compositions);
+router.post('/newCompo', compositionController.new_compo);
 
 router.get('/liste_des_joueurs/supprimer/:id', joueurController.delete);
 

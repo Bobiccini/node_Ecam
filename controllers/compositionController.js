@@ -4,20 +4,45 @@ let liste_des_compositions = [];
 
 let connection = require ('../db.js');
 
-exports.liste_des_compositions = function (req,res) {
-    res.render('popUp.ejs',{composition:liste_des_compositions});
 
+exports.nouvelles_compositions = function (req,res) {
+    connection.query("select * from adversaire;", function(error, resultSQL) {
+    if (error) {console.log(error);
+    }
+    else {
+        liste_des_adversaires = resultSQL
+        connection.query("select * from joueur;", function(error, resultSQL) {
+            if (error) {console.log(error);
+            }
+            else { 
+                nouvelle_composition = resultSQL
+                console.log(nouvelle_composition);
+                res.render('newCompo.ejs',{joueurs:nouvelle_composition,adversaires:liste_des_adversaires});
+            }       
+        });
+    }       
+});
+    
+}
 
-exports.liste_joueurs = function (req,res) {
-    connection.query("select * from joueur;", function(error, resultSQL) {
+exports.new_compo = function (req,res) {
+    console.log(req.body.adversaire)
+    connection.query("insert into match (id_adversaire) values (?)", req.body.adversaire, function (error, result_match){
         if (error) {console.log(error);
         }
-        else { 
-            liste_des_joueurs = resultSQL
-            console.log(liste_des_joueurs);
-            res.render('newCompo.ejs',{joueurs:liste_des_joueurs});
-        }       
-    });
+        else {
+            console.log (result_match);
+            let nombre_joueur = 15
+            while (nombre_joueur -- ) {
+                connection.query("insert into composition (id_match, id_joueur) values (?,?)", function (error,result){
+                    if (error) {console.log(error);
+                    }
+                });
+            }
+            res.redirect ('/')
+        }
+    })
+
 }
 
 /*function fetchjoueur() {
@@ -54,4 +79,4 @@ exports.playerNew = function (req,res) {
     res.redirect('/compo');
 }
 
-*/}
+*/

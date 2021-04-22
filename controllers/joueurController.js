@@ -26,10 +26,9 @@ exports.delete = function (req,res) {
     });
 }
 
-exports.update = function (req,res) {
-    console.log(req)
-    connection.query("update prenom = ? ,nom = ? from joueur where id_joueur = ?;", 
-    [req.body.prenom, req.body.name, req.params.id], function(error, result) {
+exports.update = function (nom, prenom, id_joueur) {
+    connection.query("update prenom = ? ,nom = ? from joueur where id_joueur = ?;", [nom, prenom, id_joueur], 
+    function (error, result) {
         if (error) {console.log(error);
         }
         else {
@@ -37,7 +36,16 @@ exports.update = function (req,res) {
         }       
     });
 }
- 
+
+/*module.exports = {
+    delete:function(deleteId) {
+    Mysql.query('delete from joueur where id_joueur = ?',[deleteId])
+    },
+
+    update:function(nom, prenom, updateId) {
+    Mysql.query('update joueur set nom =?, prenom =? where id_joueur = ?',[nom, prenom, updateId])
+    }
+};*/
 
 
 /*exports.update = function(req,res) {
