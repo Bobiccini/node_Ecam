@@ -6,15 +6,19 @@ let adversaireController = require ('./controllers/adversaireController');
 
 //Liste des routes vers les controlleurs
 
-router.get('/', (req,res) => res.render('homePage.ejs'));
+//router.get('/', (req,res) => res.render('homePage.ejs'));
 router.post('/', (req,res) => res.render('homePage.ejs'));
 router.get('/liste_des_joueurs', joueurController.liste_joueurs);
 
 router.get('/nouvelle_composition', compositionController.nouvelles_compositions);
+
+router.get('/',compositionController.liste_des_compositions);
 router.post('/newCompo', compositionController.new_compo);
+router.get ('/newCompo', (req,res) => res.redirect('/'));
+
+router.get ('/sauvegarder_les_modifications', (req,res) => res.redirect('/liste_des_joueurs'));
 
 router.get('/liste_des_joueurs/supprimer/:id', joueurController.delete);
-
 router.get('/liste_des_joueurs/modifier/:id', (req,res) => res.render('modifier.ejs'));
 
 router.post('/sauvegarder_les_modifications/:id', joueurController.update);

@@ -5,6 +5,19 @@ let liste_des_compositions = [];
 let connection = require ('../db.js');
 
 
+exports.liste_des_compositions = function (req,res) {
+    connection.query("select * from adversaire", function(error, resultSQL) {
+        if (error) {
+            match_infos = resultSQL
+            res.render('homepage.ejs',{matchs:match_infos});
+            } 
+        else {
+            match_infos = resultSQL
+            res.render('homepage.ejs',{matchs:match_infos});
+        }       
+    });
+}
+
 exports.nouvelles_compositions = function (req,res) {
     connection.query("select * from adversaire;", function(error, resultSQL) {
     if (error) {console.log(error);
@@ -16,7 +29,6 @@ exports.nouvelles_compositions = function (req,res) {
             }
             else { 
                 nouvelle_composition = resultSQL
-                console.log(nouvelle_composition);
                 res.render('newCompo.ejs',{joueurs:nouvelle_composition,adversaires:liste_des_adversaires});
             }       
         });
@@ -44,6 +56,7 @@ exports.new_compo = function (req,res) {
     })
 
 }
+
 
 /*function fetchjoueur() {
     return new Promise((resolve, reject) => {

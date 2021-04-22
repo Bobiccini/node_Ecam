@@ -7,6 +7,17 @@
       <div> <a href="/">Home</a> </div>
       <div> <a href="/liste_des_joueurs">Gestion d'Equipe</a> </div>
   </div>
+
+<!-- Liste des Matchs --> 
+
+    <ul>
+        <% for (let i = 0 ; i < matchs.length ; i++) { %> 
+        <li> <!-- <%= matchs[i].date %> -->  <%= adversaires[i].nom %>
+        <a href="/liste_des_matchs/supprimer/<%= matchs[i].id_composition %>"> Supprimer </a>
+        <a href="/liste_des_matchs/modifier/<%= match[i].id_composition %>"> Modifier </a> </li>  
+        <% } %>
+    </ul>
+
       
         <div class="new">
             <a href='/nouvelle_composition'> Nouvelle Composition </a>    
