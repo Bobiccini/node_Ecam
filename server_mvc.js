@@ -10,9 +10,8 @@ const bodyParser = require('body-parser');
 
 
 //linking a CSS file
-//app.use(express.static('public'));
-
-//app.use(express.urlencoded({extended:true}));
+app.use(express.static('public'));
+app.use(express.urlencoded({extended:true}));
 
 let router = require('./routes');
 app.use(bodyParser.json({limit:"1.1MB"}));

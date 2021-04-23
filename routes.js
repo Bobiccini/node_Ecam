@@ -14,7 +14,6 @@ router.get('/nouvelle_composition', compositionController.nouvelles_compositions
 
 router.get('/',compositionController.liste_des_compositions);
 router.post('/newCompo', compositionController.new_compo);
-router.get ('/newCompo', (req,res) => res.redirect('/'));
 
 router.get ('/sauvegarder_les_modifications', (req,res) => res.redirect('/liste_des_joueurs'));
 

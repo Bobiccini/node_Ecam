@@ -1,12 +1,21 @@
-<link rel = "stylesheet" href="/css/style.css">
+<link rel = "stylesheet" href="/css/style.css"> 
 
- <h1>Feuille de Match</h1>
+<header>
+    <h1>Kibubu Rugby Club</h1>
+        <div class="menu">
+            <div> <a href="/liste_des_joueurs">Gestion d'Equipe</a> </div>
+            <div> <a href="https://www.sportkipik.be/-regionales-">Saison 2020-2021</a> </div>
+            <div> <a href="http://www.kibubu.be">Le Club</a> </div>
+        </div>
+</header>  
+<body>
+   <h2>Feuille de Match</h2>
 
-  <form action="/newCompo" method= "POST">
+   <form action="/newCompo" method= "POST">
 
 <!-- Choix Date -->
       Date : 
-      <input type="date" id="date" value="" min="2021-01-01" max="2022-01-01" required>
+      <input type="date" id="date" name ="date" value="" min="2021-01-01" max="2022-01-01" required>
 
 <!-- Choix Adversaire -->   
       Adversaire :
@@ -15,140 +24,186 @@
             <option value="<%=adversaires[i].id_adversaire %>"> <%= adversaires[i].nom %> </option>
          <% } %>
       </select>   
-
+</br>
+</br>
+</br>
+</br>
 <!-- Joueurs -->
+      1: 
+      <select name="joueur1" id="">
+         <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
+            <option value="<%=joueurs[i].id %>" >
+               <%= joueurs[i].prenom %> <%= joueurs[i].nom %>
+            </option>
+         <% } %>
+      </select>
 
-   1/ <select name="joueur1" id="">
+   2:       
+   <select name="joueur2" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
+            <%= joueurs[i].prenom %> <%= joueurs[i].nom %>
          </option>
       <% } %>
    </select>
 
-   2/ <select name="joueur2" id="">
+   3: 
+   <select name="joueur3" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
-         </option>
-      <% } %>
-   </select> 
-
-   3/ <select name="joueur3" id="">
-      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
-         <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
+            <%= joueurs[i].prenom %> <%= joueurs[i].nom %>
          </option>
       <% } %>
    </select>
    
    <br>
    <br>
-   4/ <select name="joueur4" id="">
+
+   4:
+   <select name="joueur4" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
+            <%= joueurs[i].prenom %> <%= joueurs[i].nom %>
          </option>
       <% } %>
    </select>
-   5/ <select name="joueur5" id="">
+   5:
+   <select name="joueur1" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
+            <%= joueurs[i].prenom %> <%= joueurs[i].nom %>
          </option>
       <% } %>
    </select>
+
    <br>
    <br>
-   6/ <select name="joueur6" id="">
+
+   6:
+   <select name="joueur1" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
+            <%= joueurs[i].prenom %> <%= joueurs[i].nom %>
          </option>
       <% } %>
    </select>
-   8/ <select name="joueur7" id="">
+
+   8:
+   <select name="joueur1" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
+            <%= joueurs[i].prenom %> <%= joueurs[i].nom %>
          </option>
       <% } %>
-   </select> 
+   </select>
    
-   7/ <select name="joueur8" id="">
+   7:
+   <select name="joueur1" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
+            <%= joueurs[i].prenom %> <%= joueurs[i].nom %>
          </option>
       <% } %>
-   </select>     
+   </select>
+
    <br>
    <br>
-   9/ <select name="joueur9" id="">
+
+   9:
+   <select name="joueur1" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
+            <%= joueurs[i].prenom %> <%= joueurs[i].nom %>
          </option>
       <% } %>
-   </select>  
+   </select>
+
    <br> 
    <br>
 
-   10/ <select name="joueur10" id="">
+   10:
+   <select name="joueur1" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
+            <%= joueurs[i].prenom %> <%= joueurs[i].nom %>
          </option>
       <% } %>
-   </select>  
-   
-   <br>
-   <br>
-   12/ <select name="joueur12" id="">
-      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
-         <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
-         </option>
-      <% } %>
-   </select>  
-   13/ <select name="joueur13" id="">
-      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
-         <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
-         </option>
-      <% } %>
-   </select> 
+   </select>
 
    <br>
    <br>
-   11/ <select name="joueur11" id="">
-      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
-         <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
-         </option>
-      <% } %>
-   </select> 
-   15/ <select name="joueur15" id="">
-      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
-         <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
-         </option>
-      <% } %>
-   </select> 
 
-   14/ <select name="joueur14" id="">
+   12:
+   <select name="joueur1" id="">
       <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
          <option value="<%=joueurs[i].id %>" >
-            <%= joueurs[i].nom %> <%= joueurs[i].prenom %>
+            <%= joueurs[i].prenom %> <%= joueurs[i].nom %>
          </option>
       <% } %>
-   </select> 
+   </select>
+
+   13:
+   <select name="joueur1" id="">
+      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
+         <option value="<%=joueurs[i].id %>" >
+            <%= joueurs[i].prenom %> <%= joueurs[i].nom %>
+         </option>
+      <% } %>
+   </select>
+
+   <br>
+   <br>
+
+   11:
+   <select name="joueur1" id="">
+      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
+         <option value="<%=joueurs[i].id %>" >
+            <%= joueurs[i].prenom %> <%= joueurs[i].nom %>
+         </option>
+      <% } %>
+   </select>
+
+   15:
+   <select name="joueur1" id="">
+      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
+         <option value="<%=joueurs[i].id %>" >
+            <%= joueurs[i].prenom %> <%= joueurs[i].nom %>
+         </option>
+      <% } %>
+   </select>
+
+   14:
+   <select name="joueur1" id="">
+      <% for (let i = 0 ; i < joueurs.length ; i++) { %> 
+         <option value="<%=joueurs[i].id %>" >
+            <%= joueurs[i].prenom %> <%= joueurs[i].nom %>
+         </option>
+      <% } %>
+   </select>
    <br>
    <br>
    <br>
    <br>
    <br>
-     <a href="/nouvelle_composition"> <input type="button" name="cancel" value="Retour"/> </a>
+     <a href="/"> <input type="button" name="cancel" value="Retour"/> </a>
      <input type="submit" name="save" value="Sauvegarder la Composition" />
-
   </form>   
+</body>
+<footer>
+   <div class="rs">
+     <div class="insta">
+        <a href="https://www.instagram.com/kibubu_rugby/">
+           <div class="logo">
+               <img src="rs/insta.jpg" alt="Lien Instagram" /> 
+            </div>	
+        </a>
+     </div>
+     <div class="face"> 
+        <a href="https://www.facebook.com/KibubuRugbyClub">
+           <div class="logo">
+               <img src="rs/face.jpg" alt="Lien Facebook" /> 
+            </div> 
+        </a>
+     </div>
+  </div>
+</footer>

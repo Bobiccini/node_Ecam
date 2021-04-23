@@ -1,26 +1,46 @@
+<link rel = "stylesheet" href="/css/style.css"> 
 
-<body>
-    <link rel = "stylesheet" href="/css/style.css"> 
-
+<header>
     <h1>Kibubu Rugby Club</h1>
-  <div class="menu">
-      <div> <a href="/">Home</a> </div>
-      <div> <a href="/liste_des_joueurs">Gestion d'Equipe</a> </div>
-  </div>
+        <div class="menu">
+            <div> <a href="/liste_des_joueurs">Gestion d'Equipe</a> </div>
+            <div> <a href="https://www.sportkipik.be/-regionales-">Saison 2020-2021</a> </div>
+            <div> <a href="http://www.kibubu.be">Le Club</a> </div>
+        </div>
+</header>  
+<body>
 
-<!-- Liste des Matchs --> 
+<h2>Liste des Matchs</h2> 
 
-    <ul>
-        <% for (let i = 0 ; i < matchs.length ; i++) { %> 
-        <li> <!-- <%= matchs[i].date %> -->  <%= adversaires[i].nom %>
-        <a href="/liste_des_matchs/supprimer/<%= matchs[i].id_composition %>"> Supprimer </a>
-        <a href="/liste_des_matchs/modifier/<%= match[i].id_composition %>"> Modifier </a> </li>  
-        <% } %>
-    </ul>
 
-      
+<ul>
+	<% for (let i = 0 ; i < matchs.length ; i++) { %> 
+	<li> <%= matchs[i].date %> <%= matchs[i].nom %>
+	<a href="/liste_des_matchs/supprimer/<%= matchs[i].id_composition %>"> Supprimer </a>
+	<a href="/liste_des_matchs/modifier/<%= matchs[i].id_composition %>"> Modifier </a> </li>  
+	<% } %>
+</ul>
+
         <div class="new">
-            <a href='/nouvelle_composition'> Nouvelle Composition </a>    
+            <a href='/nouvelle_composition'> Ajouter une nouvelle composition </a>    
         </div>
         
 </body>    
+<footer>
+    <div class="rs">
+		<div class="insta">
+			<a href="https://www.instagram.com/kibubu_rugby/">
+				<div class="logo">
+			 		<img src="rs/insta.jpg" alt="Lien Instagram" /> 
+			 	</div>	
+			</a>
+		</div>
+		<div class="face"> 
+			<a href="https://www.facebook.com/KibubuRugbyClub">
+				<div class="logo">
+			 		<img src="rs/face.jpg" alt="Lien Facebook" /> 
+			 	</div> 
+			</a>
+		</div>
+	</div>
+</footer>

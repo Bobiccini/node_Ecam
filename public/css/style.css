@@ -1,33 +1,51 @@
-body{
-    background-color: grey;
+header {
+    background-color:orangered;
+    color: orange;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+    h1
+    {
+        color:orange;
+        text-align: center;
+        font-size: 3em;
+        text-shadow:2px 2px 5px black;
+    }
+
+body {
+    background-color: lightyellow;
     color:orange;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h1
+h2
 {
-    color:orange;
-    text-align: center;
-    font-size: 3em;
-}
-
-
-a {
-    color: black;
-    text-decoration: none;
+    color:orangered;
+    text-align: left;
+    font-size: 2em;
+    padding-top: 20vh;
+    padding-left: 5vw;
 }
 
 .menu {
     display: flex;
+    background-color: orange;
     align-content: space-around;
-    justify-content: space-around;
-	box-shadow: 0px 0px 10px orange;
-	font-size: 4vh;	
+    justify-content: space-evenly;
+	box-shadow: 0px 0px 10px lightyellow;
+	font-size: 1.65em;	
 	text-align: center;
 	}
 
+    .menu a {
+        color:lightyellow;
+        text-decoration: none;
+    }
     .menu :hover{
-        color: sienna;
+        color: black;
         }
     
 
@@ -39,22 +57,24 @@ a {
 
 li   
 	{
-    color: black;
-	list-style-type: none;
-	background-color: orange;
-	border: 0.5vh black solid;;
+    color: orange;
 	font-size: 4vh;	
-	text-align: center;
+	text-align: left;
+    text-shadow:2px 2px 3px black;
 	}
 
     li:hover {
 	box-shadow: 5px 5px 10px orange
     }
 
-	h2	
-	{
-	color: white
-	}
+    li a {
+        color: black;
+        font-size: 2vh;
+        position: fixed;
+        right: 20vw;
+        text-shadow:0px 0px 0px black;
+        }
+
 
 form {
     text-align: center;
@@ -67,22 +87,26 @@ form {
 
 .new {
     position: absolute;
-    bottom: 100px;
+    bottom: 200px;
     right: 50px;
     font-size: 2em;
-    background-color: ivory;
+    background-color: orange;
     border-radius: 5px;
-    box-shadow: black;
     text-align: center;
-    box-shadow: 0px 0px 10px orange;
+    box-shadow: 0px 0px 10px black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.new a {
+    color:lightyellow;
+    text-decoration: none;
 }
 
 .new :hover {
-    color: sienna;
+    color: yellow;
 }
 
-form input[type=date],[type=text],[type=submit], [type=button]{
+form input[type=submit], [type=button]{
     font-size: 2em;
     background-color: ivory;
     border-radius: 5px;
@@ -91,6 +115,25 @@ form input[type=date],[type=text],[type=submit], [type=button]{
     box-shadow: 0px 0px 10px orange;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+    form input[type=submit]:hover, [type=button]:hover, [type=date]:hover {
+        color: sienna;
+    }
+
+form input[type=date] {
+    font-size: 2em;
+    background-color: ivory;
+    border-radius: 5px;
+    position: fixed;
+    left: 10vw;
+    top: 30vh;
+    box-shadow: black;
+    text-align: center;
+    box-shadow: 0px 0px 10px orange;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
 
 select {
     font-size: 1em;
@@ -102,6 +145,35 @@ select {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-form input[type=submit]:hover, [type=button]:hover {
-    color: sienna;
+
+
+footer {
+    background-color:orangered;
+    color: orange;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 12vh;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
+.rs {
+	padding-top: 1vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+	width: 20%;
+	padding-left:40vw;
+	}
+
+	.rs img {
+		height: 10vh;
+		border-radius: 25px;
+		}
+
+	.rs img:hover {
+		height: 10vh;
+		border-radius: 25px; 
+		box-shadow: 0px 0px 15px black;
+		}	
