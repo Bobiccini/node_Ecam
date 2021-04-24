@@ -26,8 +26,9 @@ exports.delete = function (req,res) {
     });
 }
 
-exports.update = function (nom, prenom, id_joueur) {
-    connection.query("update prenom = ? ,nom = ? from joueur where id_joueur = ?;", [nom, prenom, id_joueur], 
+exports.update = function (req,res) {
+    console.log(req)
+    connection.query("update joueur set prenom = ? ,nom = ? where id_joueur = ?;", [req.body.nom, req.body.prenom, req.params.id], 
     function (error, result) {
         if (error) {console.log(error);
         }

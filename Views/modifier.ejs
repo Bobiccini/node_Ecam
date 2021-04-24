@@ -1,38 +1,45 @@
-<link rel = "stylesheet" href="/css/style.css"> 
-
-<header>
-    <h1>Kibubu Rugby Club</h1>
-        <div class="menu">
-            <div> <a href="/liste_des_joueurs">Gestion d'Equipe</a> </div>
-            <div> <a href="https://www.sportkipik.be/-regionales-">Saison 2020-2021</a> </div>
-            <div> <a href="http://www.kibubu.be">Le Club</a> </div>
-        </div>
-</header>  
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title> Accueil </title>	 
+	<link rel = "stylesheet" href="/css/style.css"> 
+</head>
+<body>
+	<div class="header">
+		<h1>Kibubu Rugby Club</h1>
+			<div class="menu">
+				<div> <a href="/">Accueil</a> </div>
+				<div> <a href="https://www.sportkipik.be/-regionales-">Saison 2020-2021</a> </div>
+				<div> <a href="http://www.kibubu.be">Le Club</a> </div>
+			</div>
+ 	</div>
+  	<div class="content">
 <!-- Formulaire de modification d'un joueur --> 
-  <form action="/sauvegarder_les_modifications/:id" method="post">
-      Prénom <input type="text" name="prenom"> </input>
+  <form action="/sauvegarder_les_modifications/<%= id_joueur %>" method="post">
+      Prénom <input type="text" name="prenom"> </input> 
       Nom <input type="text" name="nom"> </input>
     
       <a href="/liste_des_joueurs"> <input type="button" name="cancel" value="Retour"/> </a>
       <input type="submit" name="save" value="Sauvegarder la Modification" />
   </form>
-
-
-  <footer>
-    <div class="rs">
-		<div class="insta">
-			<a href="https://www.instagram.com/kibubu_rugby/">
-				<div class="logo">
-			 		<img src="rs/insta.jpg" alt="Lien Instagram" /> 
-			 	</div>	
-			</a>
-		</div>
-		<div class="face"> 
-			<a href="https://www.facebook.com/KibubuRugbyClub">
-				<div class="logo">
-			 		<img src="rs/face.jpg" alt="Lien Facebook" /> 
-			 	</div> 
-			</a>
-		</div>
 	</div>
-</footer>
+	<div class="footer">
+		<div class="rs">
+			<div class="insta">
+				<a href="https://www.instagram.com/kibubu_rugby/">
+					<div class="logo">
+						 <img src="rs/insta.jpg" alt="Lien Instagram" /> 
+					 </div>	
+				</a>
+			</div>
+			<div class="face"> 
+				<a href="https://www.facebook.com/KibubuRugbyClub">
+					<div class="logo">
+						 <img src="rs/face.jpg" alt="Lien Facebook" /> 
+					 </div> 
+				</a>
+			</div>
+		</div>
+	</div>	 
+</body>	

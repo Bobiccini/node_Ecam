@@ -6,7 +6,6 @@ let adversaireController = require ('./controllers/adversaireController');
 
 //Liste des routes vers les controlleurs
 
-//router.get('/', (req,res) => res.render('homePage.ejs'));
 router.post('/', (req,res) => res.render('homePage.ejs'));
 router.get('/liste_des_joueurs', joueurController.liste_joueurs);
 
@@ -15,27 +14,10 @@ router.get('/nouvelle_composition', compositionController.nouvelles_compositions
 router.get('/',compositionController.liste_des_compositions);
 router.post('/newCompo', compositionController.new_compo);
 
-router.get ('/sauvegarder_les_modifications', (req,res) => res.redirect('/liste_des_joueurs'));
-
 router.get('/liste_des_joueurs/supprimer/:id', joueurController.delete);
-router.get('/liste_des_joueurs/modifier/:id', (req,res) => res.render('modifier.ejs'));
+router.get('/liste_des_joueurs/modifier/:id', (req,res) => res.render('modifier.ejs',{id_joueur:req.params.id}));
 
 router.post('/sauvegarder_les_modifications/:id', joueurController.update);
 router.get ('/sauvegarder_les_modifications', (req,res) => res.redirect('/liste_des_joueurs'));
-
-
-
-
-/*router.post('/compo/new', compositionController.playerNew);
-router.get('/compo/add', compositionController.compoFormAdd);
-
-router.get('/compo/delete/:id', compositionController.delete);
-router.get('/compo/update/:id', compositionController.update);
-
-router.get('/compo/new',compositionController.composition);
-
-
-router.post('/player/update/:id', joueurController.update); */
-
 
 module.exports = router;
