@@ -8,10 +8,11 @@ let joueurController_API = require('./controllers/joueurController_API');
 //Liste des routes vers les controlleurs
  
 router.post('/', (req,res) => res.render('homePage.ejs'));
+router.post('/search', compositionController.liste_des_compositions_search);
 router.get('/liste_des_joueurs', joueurController.liste_joueurs);
 
-router.get('/nouvelle_composition', compositionController.nouvelles_compositions);
 
+router.get('/nouvelle_composition', compositionController.nouvelles_compositions);
 router.get('/',compositionController.liste_des_compositions);
 router.post('/newCompo', compositionController.new_compo);
 
@@ -24,11 +25,12 @@ router.get ('/sauvegarder_les_modifications', (req,res) => res.redirect('/liste_
 /********* API ********/
 
 router.post('/api', (req,res) => res.render('homePage.ejs'));
-router.get('/liste_des_joueurs', joueurController_API.liste_joueurs);
+router.post('/api/search', compositionController_API.liste_des_compositions_search);
+router.get('/api/liste_des_joueurs', joueurController_API.liste_joueurs);
 
 router.get('/api/nouvelle_composition', compositionController_API.nouvelles_compositions);
 
-router.get('/api/',compositionController_API.liste_des_compositions);
+router.get('/api',compositionController_API.liste_des_compositions);
 router.post('/api/newCompo', compositionController_API.new_compo);
 
 router.get('/api/liste_des_joueurs/supprimer/:id', joueurController_API.delete);

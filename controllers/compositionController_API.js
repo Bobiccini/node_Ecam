@@ -9,53 +9,54 @@ let match_infos = []
 
 exports.liste_des_compositions = function (req,res) {
     connection.query("SELECT m.date, a.nom FROM `match` AS m, adversaire AS a WHERE m.id_adversaire = a.id_adversaire", function(error, resultSQL) {
-        if (error) {
-            console.log(error)
-            } 
+        if (error) {console.log(error);
+            res.status(400).json({'error': error});
+        }
         else {
-            match_infos = resultSQL
-            res.render('homepage.ejs',{matchs:match_infos});
-        }       
+            res.status(200).json(resultSQL);
+        }    
+    });
+}
+
+exports.liste_des_compositions_search = function (req,res) {
+    connection.query("SELECT m.date, a.nom FROM `match` AS m, adversaire AS a WHERE m.id_adversaire = a.id_adversaire and a.nom like ?", ["%"+req.body.search +"%"],function(error, resultSQL) {
+        if (error) {console.log(error);
+            res.status(400).json({'error': error});
+        }
+        else {
+            console.log(resultSQL);
+            res.status(200).json(resultSQL);
+        }    
     });
 }
 
 exports.nouvelles_compositions = function (req,res) {
     connection.query("select * from adversaire;", function(error, resultSQL) {
-    if (error) {console.log(error);
-    }
-    else {
-        liste_des_adversaires = resultSQL
-        connection.query("select * from joueur;", function(error, resultSQL) {
-            if (error) {console.log(error);
-            }
-            else { 
-                nouvelle_composition = resultSQL
-                res.render('newCompo.ejs',{joueurs:nouvelle_composition,adversaires:liste_des_adversaires});
+        if (error) {console.log(error);
+            res.status(400).json({'error': error});
+        }
+        else {
+            res.status(200).json(resultSQL); {
+                if (error) {console.log(error);
+                    res.status(400).json({'error': error});
+                }
+                else {
+                    res.status(200).json(resultSQL);
+                }
             }       
-        });
-    }       
-});
-    
+        }
+    }); 
 }
 
 exports.new_compo = function (req,res) {
-    console.log(req.body.adversaire)
     let date = (req.body.date)
-    console.log(date)
     connection.query("insert into `match` (date, id_adversaire) values (?,?)",[date,req.body.adversaire], function (error, result_match){
         if (error) {console.log(error);
+            res.status(400).json({'error': error});
         }
         else {
-            console.log (result_match);
-            let nombre_joueur = 15
-            while (nombre_joueur -- ) {
-                connection.query("insert into composition (id_match, id_joueur) values (?,?)", function (error,result){
-                    if (error) {console.log(error);
-                    }
-                });
-            }
-            res.redirect ('/')
+            res.status(200).json({"message":"success"});
         }
-    })
+    });
 
 }

@@ -6,9 +6,20 @@ let connection = require ('../db.js');
 
 let match_infos = []
 
-
 exports.liste_des_compositions = function (req,res) {
     connection.query("SELECT m.date, a.nom FROM `match` AS m, adversaire AS a WHERE m.id_adversaire = a.id_adversaire", function(error, resultSQL) {
+        if (error) {
+            console.log(error)
+            } 
+        else {
+            match_infos = resultSQL
+            res.render('homepage.ejs',{matchs:match_infos});
+        }       
+    });
+}
+
+exports.liste_des_compositions_search = function (req,res) {
+    connection.query("SELECT m.date, a.nom FROM `match` AS m, adversaire AS a WHERE m.id_adversaire = a.id_adversaire and a.nom like ?", ["%"+req.body.search +"%"],function(error, resultSQL) {
         if (error) {
             console.log(error)
             } 

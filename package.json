@@ -4,7 +4,8 @@
   "main": "server_mvc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server_mvc.js"
+    "start": "node server_mvc.js",
+    "dev": "nodemon server_mvc.js"
   },
   "author": "",
   "license": "ISC",

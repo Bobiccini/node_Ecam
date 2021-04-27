@@ -14,6 +14,7 @@ const bodyParser = require('body-parser');
 //linking a CSS file
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:true}));
+app.use(express.json());
 app.use((req, res, next)=>{
     res.locals.format = format;
     next();

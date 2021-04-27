@@ -16,6 +16,10 @@
 	</div>
 	<div class="content">
 		<h2>Liste des Matchs</h2> 
+		<form action = "/search" method="POST">
+			<input type="search" name="search" value="">
+			<input type ="submit" name="rechercher" value="">
+		</form>
 			<ul>
 				<div class="historique">
 					<% for (let i = 0 ; i < matchs.length ; i++) { %> 
