@@ -1,4 +1,4 @@
-let joueurModel = require ('../models/joueurModel.js');
+ let joueurModel = require ('../models/joueurModel.js');
 
 let liste_des_joueurs= [];
 
@@ -7,11 +7,10 @@ let connection = require ('../db.js');
 exports.liste_joueurs = function (req,res) {
     connection.query("select * from joueur;", function(error, resultSQL) {
         if (error) {console.log(error);
+            res.status(400).json({'error': error});
         }
         else {
-            liste_des_joueurs = resultSQL
-            console.log(liste_des_joueurs);
-            res.render('playerList.ejs',{joueurs:liste_des_joueurs});
+            res.status(200).json(resultSQL);
         }       
     });
 }
@@ -33,7 +32,7 @@ exports.update = function (req,res) {
         if (error) {console.log(error);
         }
         else {
-            res.redirect('/liste_des_joueurs');
+            res.redirect('/liste_des_joueurs');q
         }       
     });
 }

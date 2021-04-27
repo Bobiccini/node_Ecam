@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title> Accueil </title>	 
+	<title> Modifier un Joueur </title>	 
 	<link rel = "stylesheet" href="/css/style.css"> 
 </head>
 <body>
@@ -17,8 +17,8 @@
   	<div class="content">
 <!-- Formulaire de modification d'un joueur --> 
   <form action="/sauvegarder_les_modifications/<%= id_joueur %>" method="post">
-      Prénom <input type="text" name="prenom"> </input> 
-      Nom <input type="text" name="nom"> </input>
+      Nom <input type="text" name="prenom"> </input> 
+      Prénom <input type="text" name="nom"> </input>
     
       <a href="/liste_des_joueurs"> <input type="button" name="cancel" value="Retour"/> </a>
       <input type="submit" name="save" value="Sauvegarder la Modification" />

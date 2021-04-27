@@ -18,16 +18,20 @@
 		<h2>Liste des Matchs</h2> 
 			<ul>
 				<div class="historique">
-				<% for (let i = 0 ; i < matchs.length ; i++) { %> 
-				<li> 
-					<%= format.asString('dd/MM/yyyy', matchs[i].date) %> : <%= matchs[i].nom %>
-				<a href="/liste_des_matchs/supprimer/<%= matchs[i].id_composition %>"> Supprimer </a>
-				<a href="/liste_des_matchs/modifier/<%= matchs[i].id_composition %>"> Modifier </a> </li>  
-				<% } %>
+					<% for (let i = 0 ; i < matchs.length ; i++) { %> 
+					<li>
+						<div class="matchs"> 
+							<div class="texte"> 
+								<%= format.asString('dd/MM/yyyy', matchs[i].date) %> :
+								<%= matchs[i].nom %></br></br>
+							</div>	
+						</div>	 
+					</li>  
+						<% } %>
 				</div>
 			</ul>
 
-		<div class="new">
+		<div class="new_compo">
 			<a href='/nouvelle_composition'> Ajouter une nouvelle composition </a>    
 		</div>
 	</div>
